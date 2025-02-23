@@ -9,22 +9,18 @@ int main()
     int hashh[26] = {0};
     for (int i = 0; i < s.size(); i++)
     {
-        hashh[s[i] - 'a']++;
+        hashh[s[i] - 'a']++; // convert ascii to int
     }
 
-    // int q;
-    // cin >> q;
-    // while (q--)
-    // {
-    //     char c;
-    //     cin >> c;
-    //     // fetch
-    //     cout << hashh[c - 'a'] << endl;
-    // }
-
-    for (auto it : hashh)
+    int q;
+    cin >> q;
+    while (q--)
     {
-        
+        char c;
+        cin >> c;
+        // fetch
+        cout << hashh[c - 'a'] << endl;
     }
-    return 0;
+
+        return 0;
 }
