@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    cout << "Learning DSA again starting on Feb 15, 2025 fuck!" << "\n";
+    cout << "Learning DSA again starting on Feb 15, 2025" << "\n";
     // cout << "Enter a number: ";
     // int x;
     // cin >> x;
