@@ -24,11 +24,12 @@ void moveToZeroes(int arr[], int n){
 //time complexity : O(n)
 //space complexity : O(1)
 void moveToZeroesOptimal(int arr[], int n){
-    int start = 0, zeroIndex = 0;
+    int start = 0;
     for(int i = 0; i < n; i++){
         if(arr[i] != 0){
-            zeroIndex = i;
-            swap(arr[zeroIndex], arr[start]);
+            if(i != start){
+                swap(arr[i], arr[start]);
+            }
             start++;
         }
     }

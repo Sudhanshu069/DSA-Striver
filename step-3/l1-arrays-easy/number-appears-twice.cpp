@@ -1,32 +1,61 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int numberAppearsTwice(int arr[], int n){
-    
+int numberAppearsOnceBetter(int arr[], int n)
+{
+    // hashing
+    map<int, int> mp;
+
+    for (int i = 0; i < n; i++)
+    {
+        mp[arr[i]]++;
+    }
+
+    for (auto it : mp)
+    {
+        if (it.second == 1)
+        {
+            return it.first;
+        }
+    }
+    return -1;
 }
 
-int main(){
-    int t;
-    cout<<"Enter the number of elements in the array: ";
-    cin>>t;
+int numberAppearsOnce(int arr[], int n)
+{
+    int res = 0;
+    for (int i = 0; i < n; i++)
+    {
+        res = res ^ arr[i];
+    }
+    return res;
+}
 
-    cout<<"Size of the array: ";
+int main()
+{
+    int t;
+    cout << "Enter the number of elements in the array: ";
+    cin >> t;
+
+    cout << "Size of the array: " << t << "\n";
     int arr[t];
 
-    for(int i = 0; i < t; i++){
-        cout<<"Enter index "<<i<<" of the array: ";
-        cin>>arr[i];
+    for (int i = 0; i < t; i++)
+    {
+        cout << "Enter index " << i << " of the array: ";
+        cin >> arr[i];
     }
 
-    cout<<"Given array: ";
-    for(auto it: arr){
-        cout<<it<<" ";
+    cout << "Given array: ";
+    for (auto it : arr)
+    {
+        cout << it << " ";
     }
-    cout<<"\n";
+    cout << "\n";
 
-    cout<<"Finding the number that appears twice..."<<"\n";
-    int answer = numberAppearsTwice(arr, t);
-    cout<<"The number that appears twice is: "<<answer<<"\n";
+    cout << "Finding the number that appears once..." << "\n";
+    int answer = numberAppearsOnce(arr, t);
+    cout << "The number that appears once is: " << answer << "\n";
 
     return 0;
 }
